@@ -1,0 +1,2380 @@
+{
+"source": "https://poedb.tw/us/Inscribed_Ultimatum#Uniques (datamined tier list, 3.14 market data)",
+"uniques": [
+{
+"name": "Headhunter",
+"tier": "T0",
+"sacrifice": false
+},
+{
+"name": "Reefbane",
+"tier": "T0",
+"sacrifice": false
+},
+{
+"name": "Abberath's Hooves",
+"tier": "T1",
+"sacrifice": true
+},
+{
+"name": "Arakaali's Fang",
+"tier": "T1",
+"sacrifice": true
+},
+{
+"name": "Garukhan's Flight",
+"tier": "T1",
+"sacrifice": true
+},
+{
+"name": "Gruthkul's Pelt",
+"tier": "T1",
+"sacrifice": true
+},
+{
+"name": "Kitava's Feast",
+"tier": "T1",
+"sacrifice": true
+},
+{
+"name": "Light of Lunaris",
+"tier": "T1",
+"sacrifice": true
+},
+{
+"name": "Martyr of Innocence",
+"tier": "T1",
+"sacrifice": true
+},
+{
+"name": "Ryslatha's Coil",
+"tier": "T1",
+"sacrifice": true
+},
+{
+"name": "Shade of Solaris",
+"tier": "T1",
+"sacrifice": true
+},
+{
+"name": "Sin's Rebirth",
+"tier": "T1",
+"sacrifice": true
+},
+{
+"name": "The Brine Crown",
+"tier": "T1",
+"sacrifice": true
+},
+{
+"name": "Tidebreaker",
+"tier": "T1",
+"sacrifice": true
+},
+{
+"name": "Tukohama's Fortress",
+"tier": "T1",
+"sacrifice": true
+},
+{
+"name": "Asenath's Gentle Touch",
+"tier": "T1-no-req",
+"sacrifice": false
+},
+{
+"name": "Badge of the Brotherhood",
+"tier": "T1-no-req",
+"sacrifice": false
+},
+{
+"name": "Berek's Respite",
+"tier": "T1-no-req",
+"sacrifice": false
+},
+{
+"name": "Blunderbore",
+"tier": "T1-no-req",
+"sacrifice": false
+},
+{
+"name": "Divinarius",
+"tier": "T1-no-req",
+"sacrifice": false
+},
+{
+"name": "Doryani's Prototype",
+"tier": "T1-no-req",
+"sacrifice": false
+},
+{
+"name": "Eyes of the Greatwolf",
+"tier": "T1-no-req",
+"sacrifice": false
+},
+{
+"name": "Machina Mitts",
+"tier": "T1-no-req",
+"sacrifice": false
+},
+{
+"name": "Maligaro's Virtuosity",
+"tier": "T1-no-req",
+"sacrifice": false
+},
+{
+"name": "Maloney's Mechanism",
+"tier": "T1-no-req",
+"sacrifice": false
+},
+{
+"name": "Marohi Erqi",
+"tier": "T1-no-req",
+"sacrifice": false
+},
+{
+"name": "Null and Void",
+"tier": "T1-no-req",
+"sacrifice": false
+},
+{
+"name": "Perfidy",
+"tier": "T1-no-req",
+"sacrifice": false
+},
+{
+"name": "Pledge of Hands",
+"tier": "T1-no-req",
+"sacrifice": false
+},
+{
+"name": "Rigwald's Quills",
+"tier": "T1-no-req",
+"sacrifice": false
+},
+{
+"name": "Shavronne's Revelation",
+"tier": "T1-no-req",
+"sacrifice": false
+},
+{
+"name": "The Grey Spire",
+"tier": "T1-no-req",
+"sacrifice": false
+},
+{
+"name": "The Harvest",
+"tier": "T1-no-req",
+"sacrifice": false
+},
+{
+"name": "Valako's Sign",
+"tier": "T1-no-req",
+"sacrifice": false
+},
+{
+"name": "Voll's Devotion",
+"tier": "T1-no-req",
+"sacrifice": false
+},
+{
+"name": "Ylfeban's Trickery",
+"tier": "T1-no-req",
+"sacrifice": false
+},
+{
+"name": "Aegis Aurora",
+"tier": "T2",
+"sacrifice": true
+},
+{
+"name": "Astramentis",
+"tier": "T2",
+"sacrifice": true
+},
+{
+"name": "Atziri's Foible",
+"tier": "T2",
+"sacrifice": true
+},
+{
+"name": "Auxium",
+"tier": "T2",
+"sacrifice": true
+},
+{
+"name": "Bisco's Collar",
+"tier": "T2",
+"sacrifice": true
+},
+{
+"name": "Bisco's Leash",
+"tier": "T2",
+"sacrifice": true
+},
+{
+"name": "Call of the Brotherhood",
+"tier": "T2",
+"sacrifice": true
+},
+{
+"name": "Cloak of Defiance",
+"tier": "T2",
+"sacrifice": true
+},
+{
+"name": "Cospri's Malice",
+"tier": "T2",
+"sacrifice": true
+},
+{
+"name": "Daresso's Defiance",
+"tier": "T2",
+"sacrifice": true
+},
+{
+"name": "Doedre's Skin",
+"tier": "T2",
+"sacrifice": true
+},
+{
+"name": "Doomsower",
+"tier": "T2",
+"sacrifice": true
+},
+{
+"name": "Doryani's Fist",
+"tier": "T2",
+"sacrifice": true
+},
+{
+"name": "Eye of Innocence",
+"tier": "T2",
+"sacrifice": true
+},
+{
+"name": "Goldwyrm",
+"tier": "T2",
+"sacrifice": true
+},
+{
+"name": "Grelwood Shank",
+"tier": "T2",
+"sacrifice": true
+},
+{
+"name": "Hegemony's Era",
+"tier": "T2",
+"sacrifice": true
+},
+{
+"name": "Hyrri's Ire",
+"tier": "T2",
+"sacrifice": true
+},
+{
+"name": "Inpulsa's Broken Heart",
+"tier": "T2",
+"sacrifice": true
+},
+{
+"name": "Jack, the Axe",
+"tier": "T2",
+"sacrifice": true
+},
+{
+"name": "Kaom's Heart",
+"tier": "T2",
+"sacrifice": true
+},
+{
+"name": "Lycosidae",
+"tier": "T2",
+"sacrifice": true
+},
+{
+"name": "Memory Vault",
+"tier": "T2",
+"sacrifice": true
+},
+{
+"name": "Mjölner",
+"tier": "T2",
+"sacrifice": true
+},
+{
+"name": "Prism Guardian",
+"tier": "T2",
+"sacrifice": true
+},
+{
+"name": "Shavronne's Wrappings",
+"tier": "T2",
+"sacrifice": true
+},
+{
+"name": "Skyforth",
+"tier": "T2",
+"sacrifice": true
+},
+{
+"name": "Song of the Sirens",
+"tier": "T2",
+"sacrifice": true
+},
+{
+"name": "Soul Taker",
+"tier": "T2",
+"sacrifice": true
+},
+{
+"name": "Taste of Hate",
+"tier": "T2",
+"sacrifice": true
+},
+{
+"name": "The Brass Dome",
+"tier": "T2",
+"sacrifice": true
+},
+{
+"name": "The Ivory Tower",
+"tier": "T2",
+"sacrifice": true
+},
+{
+"name": "The Poet's Pen",
+"tier": "T2",
+"sacrifice": true
+},
+{
+"name": "Ventor's Gamble",
+"tier": "T2",
+"sacrifice": true
+},
+{
+"name": "Void Battery",
+"tier": "T2",
+"sacrifice": true
+},
+{
+"name": "Voltaxic Rift",
+"tier": "T2",
+"sacrifice": true
+},
+{
+"name": "Windripper",
+"tier": "T2",
+"sacrifice": true
+},
+{
+"name": "Yoke of Suffering",
+"tier": "T2",
+"sacrifice": true
+},
+{
+"name": "Algor Mortis",
+"tier": "T2-no-req",
+"sacrifice": false
+},
+{
+"name": "Assailum",
+"tier": "T2-no-req",
+"sacrifice": false
+},
+{
+"name": "Corpsewalker",
+"tier": "T2-no-req",
+"sacrifice": false
+},
+{
+"name": "Darkscorn",
+"tier": "T2-no-req",
+"sacrifice": false
+},
+{
+"name": "Demon Stitcher",
+"tier": "T2-no-req",
+"sacrifice": false
+},
+{
+"name": "Faminebind",
+"tier": "T2-no-req",
+"sacrifice": false
+},
+{
+"name": "Feastbind",
+"tier": "T2-no-req",
+"sacrifice": false
+},
+{
+"name": "Hyrri's Truth",
+"tier": "T2-no-req",
+"sacrifice": false
+},
+{
+"name": "Icefang Orbit",
+"tier": "T2-no-req",
+"sacrifice": false
+},
+{
+"name": "March of the Legion",
+"tier": "T2-no-req",
+"sacrifice": false
+},
+{
+"name": "Maw of Conquest",
+"tier": "T2-no-req",
+"sacrifice": false
+},
+{
+"name": "Natural Hierarchy",
+"tier": "T2-no-req",
+"sacrifice": false
+},
+{
+"name": "Pyroshock Clasp",
+"tier": "T2-no-req",
+"sacrifice": false
+},
+{
+"name": "Rathpith Globe",
+"tier": "T2-no-req",
+"sacrifice": false
+},
+{
+"name": "Rebuke of the Vaal",
+"tier": "T2-no-req",
+"sacrifice": false
+},
+{
+"name": "Rigwald's Command",
+"tier": "T2-no-req",
+"sacrifice": false
+},
+{
+"name": "Rigwald's Curse",
+"tier": "T2-no-req",
+"sacrifice": false
+},
+{
+"name": "Rigwald's Savagery",
+"tier": "T2-no-req",
+"sacrifice": false
+},
+{
+"name": "Sign of the Sin Eater",
+"tier": "T2-no-req",
+"sacrifice": false
+},
+{
+"name": "Soulwrest",
+"tier": "T2-no-req",
+"sacrifice": false
+},
+{
+"name": "Storm Secret",
+"tier": "T2-no-req",
+"sacrifice": false
+},
+{
+"name": "Tavukai",
+"tier": "T2-no-req",
+"sacrifice": false
+},
+{
+"name": "The Ephemeral Bond",
+"tier": "T2-no-req",
+"sacrifice": false
+},
+{
+"name": "The Ghastly Theatre",
+"tier": "T2-no-req",
+"sacrifice": false
+},
+{
+"name": "The Primordial Chain",
+"tier": "T2-no-req",
+"sacrifice": false
+},
+{
+"name": "Venopuncture",
+"tier": "T2-no-req",
+"sacrifice": false
+},
+{
+"name": "Willclash",
+"tier": "T2-no-req",
+"sacrifice": false
+},
+{
+"name": "Abyssus",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Agnerod East",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Agnerod North",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Agnerod South",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Agnerod West",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Ahn's Might",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Allelopathy",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Allure",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Alpha's Howl",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Ancient Skull",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Andvarius",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Apep's Rage",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Augyre",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Aurseize",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Balefire",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Belly of the Beast",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Beltimber Blade",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Bino's Kitchen Knife",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Black Sun Crest",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Bloodbond",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Bloodseeker",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Brain Rattler",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Brightbeak",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Carcass Jack",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Carnage Heart",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Chains of Command",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Cherrubim's Maleficence",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Chin Sol",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Chitus' Apex",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Cold Iron Point",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Coralito's Signature",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Cospri's Will",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Crown of Eyes",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Death's Hand",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Death's Oath",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Devoto's Devotion",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Divination Distillate",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Doedre's Damning",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Doon Cuebiyari",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Dream Fragments",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Dreamfeather",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Drillneck",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Dyadian Dawn",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Emberwake",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Empire's Grasp",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Essence Worm",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Essentia Sanguis",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Eye of Chayula",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Fleshcrafter",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Fractal Thoughts",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Geofri's Sanctuary",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Gloomfang",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Gluttony",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Great Old One's Tentacles",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Great Old One's Ward",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Greed's Embrace",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Haemophilia",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Heretic's Veil",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Hezmana's Bloodlust",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Hiltless",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Hyaon's Fury",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Ichimonji",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Incandescent Heart",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Iron Heart",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Kaom's Roots",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Kiara's Determination",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Kitava's Thirst",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Kongor's Undying Rage",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Le Heup of All",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Leash of Oblation",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Leper's Alms",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Lightning Coil",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Lioneye's Glare",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Lioneye's Remorse",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Lioneye's Vision",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Lion's Roar",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Malachai's Loop",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Malachai's Mark",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Maligaro's Cruelty",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Maligaro's Restraint",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Maloney's Nightfall",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Manastorm",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Marylene's Fallacy",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Midnight Bargain",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Mindspiral",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Ming's Heart",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Mistwall",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Moonbender's Wing",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Ngamahu's Flame",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Null's Inclination",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Oskarm",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Perandus Signet",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Perquil's Toe",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Perseverance",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Piscator's Vigil",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Profane Proxy",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Pyre",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Queen of the Forest",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Rainbowstride",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Rashkaldor's Patience",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Rat's Nest",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Razor of the Seventh Sun",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Rearguard",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Repentance",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Rive",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Romira's Banquet",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Rumi's Concoction",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Saemus' Gift",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Saffell's Frame",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Sentari's Answer",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Sibyl's Lament",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Siegebreaker",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Sin Trek",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Singularity",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Sire of Shards",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Snakepit",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Soul Strike",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Soul Tether",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Soulthirst",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Stormfire",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Taryn's Shiver",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Tear of Purity",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "The Aylardex",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "The Baron",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "The Beast Fur Shawl",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "The Blood Dance",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "The Bringer of Rain",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "The Coming Calamity",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "The Consuming Dark",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "The Coward's Trial",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "The Druggery",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "The Goddess Bound",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "The Hungry Loop",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "The Jinxed Juju",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "The Putrid Cloister",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "The Scourge",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "The Searing Touch",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "The Supreme Truth",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "The Tempestuous Steel",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "The Twilight Temple",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "The Warden's Brand",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "The Whispering Ice",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "The Wise Oak",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "The Writhing Jar",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Thief's Torment",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Thunderfist",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Tinkerskin",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Titucius' Span",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Touch of Anguish",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Tremor Rod",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Valyrium",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Victario's Influence",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Vis Mortis",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Vixen's Entrapment",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Voidbringer",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Voll's Vision",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Vulconus",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Warped Timepiece",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Windscream",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Witchfire Brew",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Worldcarver",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Zeel's Amplifier",
+"tier": "T3",
+"sacrifice": true
+},
+{
+"name": "Al Dhih",
+"tier": "T3-no-req",
+"sacrifice": false
+},
+{
+"name": "Aukuna's Will",
+"tier": "T3-no-req",
+"sacrifice": false
+},
+{
+"name": "Berek's Grip",
+"tier": "T3-no-req",
+"sacrifice": false
+},
+{
+"name": "Blightwell",
+"tier": "T3-no-req",
+"sacrifice": false
+},
+{
+"name": "Blood of the Karui",
+"tier": "T3-no-req",
+"sacrifice": false
+},
+{
+"name": "Brutus' Lead Sprinkler",
+"tier": "T3-no-req",
+"sacrifice": false
+},
+{
+"name": "Crown of the Pale King",
+"tier": "T3-no-req",
+"sacrifice": false
+},
+{
+"name": "Emperor's Vigilance",
+"tier": "T3-no-req",
+"sacrifice": false
+},
+{
+"name": "Flesh and Spirit",
+"tier": "T3-no-req",
+"sacrifice": false
+},
+{
+"name": "Gifts from Above",
+"tier": "T3-no-req",
+"sacrifice": false
+},
+{
+"name": "Jorrhast's Blacksteel",
+"tier": "T3-no-req",
+"sacrifice": false
+},
+{
+"name": "Kaom's Primacy",
+"tier": "T3-no-req",
+"sacrifice": false
+},
+{
+"name": "Lavianga's Spirit",
+"tier": "T3-no-req",
+"sacrifice": false
+},
+{
+"name": "Lioneye's Paws",
+"tier": "T3-no-req",
+"sacrifice": false
+},
+{
+"name": "Mark of Submission",
+"tier": "T3-no-req",
+"sacrifice": false
+},
+{
+"name": "Mercenary's Lot",
+"tier": "T3-no-req",
+"sacrifice": false
+},
+{
+"name": "Rigwald's Crest",
+"tier": "T3-no-req",
+"sacrifice": false
+},
+{
+"name": "Rotting Legion",
+"tier": "T3-no-req",
+"sacrifice": false
+},
+{
+"name": "Scold's Bridle",
+"tier": "T3-no-req",
+"sacrifice": false
+},
+{
+"name": "Shadows and Dust",
+"tier": "T3-no-req",
+"sacrifice": false
+},
+{
+"name": "Tasalio's Sign",
+"tier": "T3-no-req",
+"sacrifice": false
+},
+{
+"name": "The Highwayman",
+"tier": "T3-no-req",
+"sacrifice": false
+},
+{
+"name": "The Rat Cage",
+"tier": "T3-no-req",
+"sacrifice": false
+},
+{
+"name": "The Sorrow of the Divine",
+"tier": "T3-no-req",
+"sacrifice": false
+},
+{
+"name": "Victario's Acuity",
+"tier": "T3-no-req",
+"sacrifice": false
+},
+{
+"name": "Voideye",
+"tier": "T3-no-req",
+"sacrifice": false
+},
+{
+"name": "Voll's Protector",
+"tier": "T3-no-req",
+"sacrifice": false
+},
+{
+"name": "Wreath of Phrecia",
+"tier": "T3-no-req",
+"sacrifice": false
+},
+{
+"name": "Advancing Fortress",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Ahn's Contempt",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Ahn's Heritage",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Alberon's Warpath",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Asphyxia's Wrath",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Atziri's Mirror",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Belt of the Deceiver",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Bloodgrip",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Bronn's Lithe",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Caer Blaidd, Wolfpack's Den",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Callinellus Malleus",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Cane of Unravelling",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Chernobog's Pillar",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Chober Chaber",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Clayshaper",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Crest of Perandus",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Crown of Thorns",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Curtain Call",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Cybil's Paw",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Darkray Vectors",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Death and Taxes",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Debeon's Dirge",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Dendrobate",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Dialla's Malefaction",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Doedre's Elixir",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Doedre's Scorn",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Dyadus",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Dying Breath",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Earendel's Embrace",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Eclipse Solaris",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Ephemeral Edge",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Extractor Mentis",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Eye of Malice",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Facebreaker",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Femurs of the Saints",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Fidelitas' Spike",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Forbidden Taste",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Frostbreath",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Gang's Momentum",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Goblinedge",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Goldrim",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Hall of Grandmasters",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Hallowed Ground",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Heartbound Loop",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Heartbreaker",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Hrimnor's Resolve",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Immortal Flesh",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Infractem",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Innsbury Edge",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Iron Commander",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Jaws of Agony",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Kalisa's Grace",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Kikazaru",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Kondo's Pride",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Kongming's Stratagem",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Leer Cast",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Lochtonial Caress",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Lori's Lantern",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Malachai's Artifice",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Malachai's Simula",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Maligaro's Lens",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Mao Kun",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Mark of the Doubting Knight",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Mark of the Red Covenant",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Matua Tupuna",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Meginord's Girdle",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Meginord's Vise",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Mightflay",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Mokou's Embrace",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Mon'tregul's Grasp",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Mortem Morsu",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Nuro's Harp",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Nycta's Lantern",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Obscurantis",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Ornament of the East",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Oro's Sacrifice",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Painseeker",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Pillar of the Caged God",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Poorjoy's Asylum",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Praxis",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Prismweave",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Quecholli",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Quill Rain",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Ralakesh's Impatience",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Realmshaper",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Reaper's Pursuit",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Retaliation Charm",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Rime Gaze",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Rise of the Phoenix",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Rotgut",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Sadima's Touch",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Scaeva",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Scorpion's Call",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Shackles of the Wretched",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Shaper's Seed",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Sidhebreath",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Sinvicta's Mettle",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Skirmish",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Slivertongue",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Snakebite",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Solaris Lorica",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Soul Mantle",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Southbound",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Speaker's Wreath",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Starkonja's Head",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Stone of Lazhwar",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Sunblast",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Sundance",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Surgebinders",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Tabula Rasa",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Terminus Est",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "The Anvil",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "The Black Cane",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "The Blood Thorn",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "The Covenant",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "The Dancing Dervish",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "The Embalmer",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "The Eternal Apple",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "The Magnate",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "The Overflowing Chalice",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "The Restless Ward",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "The Stormheart",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "The Wasp Nest",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Timeclasp",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Torchoak Step",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Triad Grip",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Veil of the Night",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Veruso's Battering Rams",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Victario's Charity",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Wheel of the Stormsail",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "White Wind",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Willowgift",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Wings of Entropy",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Winterheart",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Wyrmsign",
+"tier": "T4",
+"sacrifice": true
+},
+{
+"name": "Inspired Learning",
+"tier": "Jewel-T0",
+"sacrifice": false
+},
+{
+"name": "Unending Hunger",
+"tier": "Jewel-T0",
+"sacrifice": false
+},
+{
+"name": "Unnatural Instinct",
+"tier": "Jewel-T0",
+"sacrifice": false
+},
+{
+"name": "Clear Mind",
+"tier": "Jewel-T1",
+"sacrifice": true
+},
+{
+"name": "Energy From Within",
+"tier": "Jewel-T1",
+"sacrifice": true
+},
+{
+"name": "Fortress Covenant",
+"tier": "Jewel-T1",
+"sacrifice": true
+},
+{
+"name": "Grand Spectrum",
+"tier": "Jewel-T1",
+"sacrifice": true
+},
+{
+"name": "Healthy Mind",
+"tier": "Jewel-T1",
+"sacrifice": true
+},
+{
+"name": "Intuitive Leap",
+"tier": "Jewel-T1",
+"sacrifice": true
+},
+{
+"name": "Lioneye's Fall",
+"tier": "Jewel-T1",
+"sacrifice": true
+},
+{
+"name": "Might of the Meek",
+"tier": "Jewel-T1",
+"sacrifice": true
+},
+{
+"name": "Primordial Might",
+"tier": "Jewel-T1",
+"sacrifice": true
+},
+{
+"name": "Pure Talent",
+"tier": "Jewel-T1",
+"sacrifice": true
+},
+{
+"name": "Quickening Covenant",
+"tier": "Jewel-T1",
+"sacrifice": true
+},
+{
+"name": "To Dust",
+"tier": "Jewel-T1",
+"sacrifice": true
+},
+{
+"name": "Anatomical Knowledge",
+"tier": "Jewel-T2",
+"sacrifice": true
+},
+{
+"name": "Brute Force Solution",
+"tier": "Jewel-T2",
+"sacrifice": true
+},
+{
+"name": "Careful Planning",
+"tier": "Jewel-T2",
+"sacrifice": true
+},
+{
+"name": "Cold Steel",
+"tier": "Jewel-T2",
+"sacrifice": true
+},
+{
+"name": "Dead Reckoning",
+"tier": "Jewel-T2",
+"sacrifice": true
+},
+{
+"name": "Divide and Conquer",
+"tier": "Jewel-T2",
+"sacrifice": true
+},
+{
+"name": "Efficient Training",
+"tier": "Jewel-T2",
+"sacrifice": true
+},
+{
+"name": "Eldritch Knowledge",
+"tier": "Jewel-T2",
+"sacrifice": true
+},
+{
+"name": "Fertile Mind",
+"tier": "Jewel-T2",
+"sacrifice": true
+},
+{
+"name": "Fireborn",
+"tier": "Jewel-T2",
+"sacrifice": true
+},
+{
+"name": "Fluid Motion",
+"tier": "Jewel-T2",
+"sacrifice": true
+},
+{
+"name": "From Dust",
+"tier": "Jewel-T2",
+"sacrifice": true
+},
+{
+"name": "Hair Trigger",
+"tier": "Jewel-T2",
+"sacrifice": true
+},
+{
+"name": "Hidden Potential",
+"tier": "Jewel-T2",
+"sacrifice": true
+},
+{
+"name": "Hotheaded",
+"tier": "Jewel-T2",
+"sacrifice": true
+},
+{
+"name": "Inertia",
+"tier": "Jewel-T2",
+"sacrifice": true
+},
+{
+"name": "Mantra of Flames",
+"tier": "Jewel-T2",
+"sacrifice": true
+},
+{
+"name": "Martial Artistry",
+"tier": "Jewel-T2",
+"sacrifice": true
+},
+{
+"name": "Might in All Forms",
+"tier": "Jewel-T2",
+"sacrifice": true
+},
+{
+"name": "Primordial Eminence",
+"tier": "Jewel-T2",
+"sacrifice": true
+},
+{
+"name": "Primordial Harmony",
+"tier": "Jewel-T2",
+"sacrifice": true
+},
+{
+"name": "Pugilist",
+"tier": "Jewel-T2",
+"sacrifice": true
+},
+{
+"name": "Rain of Splinters",
+"tier": "Jewel-T2",
+"sacrifice": true
+},
+{
+"name": "Reckless Defence",
+"tier": "Jewel-T2",
+"sacrifice": true
+},
+{
+"name": "Soul's Wick",
+"tier": "Jewel-T2",
+"sacrifice": true
+},
+{
+"name": "Spire of Stone",
+"tier": "Jewel-T2",
+"sacrifice": true
+},
+{
+"name": "Spirit Guards",
+"tier": "Jewel-T2",
+"sacrifice": true
+},
+{
+"name": "Spirited Response",
+"tier": "Jewel-T2",
+"sacrifice": true
+},
+{
+"name": "Static Electricity",
+"tier": "Jewel-T2",
+"sacrifice": true
+},
+{
+"name": "Steel Spirit",
+"tier": "Jewel-T2",
+"sacrifice": true
+},
+{
+"name": "The Golden Rule",
+"tier": "Jewel-T2",
+"sacrifice": true
+},
+{
+"name": "The Vigil",
+"tier": "Jewel-T2",
+"sacrifice": true
+},
+{
+"name": "Unstable Payload",
+"tier": "Jewel-T2",
+"sacrifice": true
+},
+{
+"name": "Winter's Bounty",
+"tier": "Jewel-T2",
+"sacrifice": true
+}
+]
+}

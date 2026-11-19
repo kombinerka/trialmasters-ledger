@@ -1,0 +1,9 @@
+# your own data – never commit
+config/
+logs/
+*.filter
+# python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
