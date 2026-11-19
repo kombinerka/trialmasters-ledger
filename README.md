@@ -13,7 +13,8 @@ to win them to come out ahead, what that **Heist curio** on the display is worth
 | 📜 **Ultimatum scanner** | Scans **Instant Buyout** Inscribed Ultimatums on the trade site in the background and ranks them by **profit if you win**, **loss if you fail** and **how often you must win** to break even. Values come from poe.ninja. Checks the expensive end (chase uniques like Defiance of Destiny), every sacrifice stack size (4× / 8× Divine …), the unique rewards it has seen and the newest listings every 10 minutes. 🔥 + a beep for new steals. Double-click → that seller's listing on pathofexile.com, *Travel to Hideout* there. |
 | 📒 **My ultimatums** | Every deal you open is remembered. Mark it bought / won / lost, enter what you **really** paid and sold for, and you get your win rate per challenge and the chaos you actually made. The scanner then shows *your* win rate next to each deal's break-even. |
 | 💰 **Price check (Ctrl+F3)** | Hover an item in game and press **Ctrl+F3**: Inscribed Ultimatums (precise trade search + what you'd make buying at the median), **Heist curios** and other picture-only items (read from the screen), uniques, gems, currency, cards, bases (poe.ninja) and rares (trade site, by their affixes). |
-| 🧹 **Loot filter** | Writes `TrialmastersLedger.filter`: NeverSink's filter + poe.ninja price tiers for your league (refreshed hourly). Your choice of strictness, price thresholds, sounds / beams / minimap icons, bigger text, always-highlighted Chaos Orbs, Heist Blueprints & Contracts and Inscribed Ultimatums, plus your own always-show and never-show lists. |
+| 🧹 **Loot filter** | Writes `TrialmastersLedger.filter`: NeverSink's filter + poe.ninja price tiers for your league (refreshed hourly). NeverSink's strictness levels (Soft … Uber Plus Strict), your price thresholds, sounds / beams / minimap icons, bigger text, always-highlighted Chaos Orbs, Heist Blueprints & Contracts and Inscribed Ultimatums, plus your own always-show and never-show lists. |
+| 🔎 **Quick search** | One search when you press the button: Inscribed Ultimatums by reward (e.g. *Divine Orb doubled, under 150 chaos* or *gives Defiance of Destiny*) and Heist Blueprints by revealed wings (e.g. *4/4 wings, area level 83+, under 2 div*) – results right in the app, double-click to open the listing. |
 | ⚙ **Settings** | League, your own list of ultimatum modifiers you don't want to run, optional trade login. |
 
 ### 🗝 Heist curios
@@ -41,6 +42,10 @@ Hover the Inscribed Ultimatum (also mid-trial) and press Ctrl+F3: sacrifice → 
 ultimatum sells for and how often you'd have to win.
 
 ![Ultimatum price check](docs/ultimatum-check.png)
+
+### 🔎 Quick search
+
+![Quick search](docs/quick-search.png)
 
 ### ⚠ Your own hard modifiers
 

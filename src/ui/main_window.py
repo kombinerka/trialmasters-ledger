@@ -30,6 +30,8 @@ from src.trade_search import LIMITER, SESSION, squash
 from src.ui.history_tab import HistoryTab
 from src.ui.loot_filter_window import LootFilterWindow
 from src.ui.price_tab import PriceTab
+from src.ui.quick_tab import QuickSearchTab
+from src.quick_search import search_blueprints, search_ultimatums
 from src.ui.settings_tab import SettingsTab
 from src.ui.translation_popup import TranslationPopup
 from src.ui.ultimatum_scan_window import UltimatumScanWindow
@@ -103,6 +105,8 @@ class MainWindow(QMainWindow):
                                       divine=lambda: getattr(self.price_check.cached(), "divine_chaos", 0.0) or 0.0,
                                       card_info=self.card_value)
         self.price_tab = PriceTab(cfg.price_key, self.set_price_key)
+        self.quick_tab = QuickSearchTab(self.quick_ultimatums, self.quick_blueprints, self.fmt, self._quick_item_names,
+                                        open_deal=self.open_deal)
         self.filter_tab = LootFilterWindow(self.settings_mgr, on_write=lambda: self.write_filter(force_prices=True),
                                            on_open_folder=self.open_filter_folder)
         self.filter_tab.set_folder(str(self.filter_dir()))
@@ -110,8 +114,10 @@ class MainWindow(QMainWindow):
                                         mod_names=self._ultimatum_mod_names(), hard_mods=list(NASTY_MODS),
                                         on_hard_mods=self.set_hard_mods, defaults=list(DEFAULT_HARD_MODS))
         for widget, label in ((self.scan, "📜 Ultimatum scanner"), (self.history_tab, "📒 My ultimatums"),
+                              (self.quick_tab, "🔎 Quick search"),
                               (self.price_tab, f"💰 Price check (Ctrl+{cfg.price_key})"),
-                              (self.filter_tab, "🧹 Loot filter"), (self.settings_tab, "⚙ Settings")):
+                              (self.filter_tab, "🧹 Loot filter"),
+                              (self.settings_tab, "⚙ Settings")):
             self.tabs.addTab(widget, label)
         self.tabs.setCurrentIndex(max(0, min(int(cfg.last_tab), self.tabs.count() - 1)))
         self.tabs.currentChanged.connect(self._tab_changed)
@@ -158,6 +164,31 @@ class MainWindow(QMainWindow):
                     f"≤ {self.fmt(real)} per card) – valued at that")
         d.sacrifice_chaos = real * d.count
         d.reward_chaos = real * d.count * 2
+
+    # ---------- quick search (one-off, you press the button) ----------
+    def quick_ultimatums(self, reward_type: str, item: str, max_chaos: float):
+        deals, url, total = search_ultimatums(self._scan_index(), self.service.current_league(), reward_type, item,
+                                              max_chaos, post=self._post, get=self._get)
+        for d in deals:
+            self.reality_check(d)
+        return deals, url, total
+
+    def quick_blueprints(self, blueprint: str, wings: int, total_wings: int, min_area: int, max_chaos: float):
+        idx = self.price_check.cached()
+        return search_blueprints(self.service.current_league(), blueprint, wings, total_wings, min_area, max_chaos,
+                                 divine_chaos=getattr(idx, "divine_chaos", 0.0) or 0.0, post=self._post, get=self._get)
+
+    def _quick_item_names(self) -> list:
+        """Sacrifices and unique rewards seen on the market so far, plus the usual currency."""
+        import json
+        from src.ultimatum_scan import COMMON_SACRIFICES
+        names = set(COMMON_SACRIFICES)
+        for f in ("ultimatum_sacrifices.json", "ultimatum_rewards.json"):
+            try:
+                names |= set(json.loads((self.settings_mgr.cache_dir / f).read_text(encoding="utf-8")))
+            except (OSError, ValueError, TypeError):
+                pass
+        return sorted(names)
 
     def card_value(self, name: str):
         """What a full set of this divination card turns into (None if it isn't a card or prices aren't loaded)."""

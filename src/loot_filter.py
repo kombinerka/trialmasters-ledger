@@ -26,11 +26,22 @@ logger = logging.getLogger(__name__)
 Fetch = Callable[[str], str]
 
 NEVERSINK_URL = "https://raw.githubusercontent.com/NeverSinkDev/NeverSink-Filter/master/{}"
-STRICTNESS = {  # label -> NeverSink file
-    "show a lot": "NeverSink's filter - 0-SOFT.filter",
-    "medium": "NeverSink's filter - 2-SEMI-STRICT.filter",
-    "only what matters": "NeverSink's filter - 3-STRICT.filter",
+STRICTNESS = {  # NeverSink's own strictness levels -> his file
+    "Soft": "NeverSink's filter - 0-SOFT.filter",
+    "Regular": "NeverSink's filter - 1-REGULAR.filter",
+    "Semi-Strict": "NeverSink's filter - 2-SEMI-STRICT.filter",
+    "Strict": "NeverSink's filter - 3-STRICT.filter",
+    "Very Strict": "NeverSink's filter - 4-VERY-STRICT.filter",
+    "Uber Strict": "NeverSink's filter - 5-UBER-STRICT.filter",
+    "Uber Plus Strict": "NeverSink's filter - 6-UBER-PLUS-STRICT.filter",
 }
+OLD_STRICTNESS = {"show a lot": "Soft", "medium": "Semi-Strict", "only what matters": "Strict"}  # earlier labels
+
+
+def strictness_label(value: str) -> str:
+    """NeverSink's name for a saved strictness (older settings used 'show a lot' / 'medium' / 'only what matters')."""
+    value = OLD_STRICTNESS.get(value, value)
+    return value if value in STRICTNESS else "Soft"
 NINJA = "https://poe.ninja/poe1/api"
 EXCHANGE_TYPES = ("Currency", "Fragment", "DivinationCard", "Scarab", "Essence", "Oil", "Fossil", "Resonator",
                   "DeliriumOrb", "Omen", "Tattoo", "Artifact", "Incubator")
@@ -276,7 +287,7 @@ def adjust_tier4(base_filter: str, mode: str) -> str:
 
 @dataclass
 class FilterSettings:
-    strictness: str = "show a lot"
+    strictness: str = "Soft"
     tier4: str = "highlight"  # highlight | quiet | hide - gear of the new item tier 4
     top_chaos: float = 100.0
     high_chaos: float = 20.0
@@ -400,7 +411,7 @@ class LootFilterManager:
         return path.is_file() and time.time() - path.stat().st_mtime < max_age
 
     def base_filter(self, strictness: str, force: bool = False) -> str:
-        fname = STRICTNESS.get(strictness, STRICTNESS["show a lot"])
+        fname = STRICTNESS[strictness_label(strictness)]
         path = self.cache_dir / ("neversink_" + re.sub(r"[^A-Za-z0-9]+", "_", fname))
         if force or not self._fresh(path, self.BASE_MAX_AGE):
             try:

@@ -132,7 +132,7 @@ def test_main_window_builds_and_records_opened_deals(qapp: QApplication, tmp_pat
         return {"id": "xyz", "result": [], "total": 0}
 
     win = mw.MainWindow(SettingsManager(tmp_path / "settings.json"), ocr=FakeOcr(), post=post, get=lambda url: {"result": []})
-    assert win.tabs.count() == 5
+    assert win.tabs.count() == 6
     win.scan.add_deals("Divine Orb", [_deal("a", price=50.0), _deal("z", price=55.0)])
     assert win.scan.table.rowCount() == 2  # +140c / +135c >= the 100c bar
 
@@ -296,3 +296,43 @@ def test_loot_filter_options() -> None:
     assert "SetFontSize 45" in mine and "SetFontSize 48" not in mine  # boosted, capped at 45
     loud = build_filter(base, FilterSettings(), None, [])
     assert 'Class == "Blueprints" "Contracts"' in loud and "PlayEffect Purple" in loud
+
+
+def test_neversink_strictness_levels() -> None:
+    from src.loot_filter import STRICTNESS, strictness_label
+
+    assert list(STRICTNESS)[0] == "Soft" and list(STRICTNESS)[-1] == "Uber Plus Strict" and len(STRICTNESS) == 7
+    assert strictness_label("show a lot") == "Soft" and strictness_label("only what matters") == "Strict"
+    assert strictness_label("Very Strict") == "Very Strict" and strictness_label("nonsense") == "Soft"
+
+
+def test_quick_searches_build_the_right_queries(qapp: QApplication, tmp_path: Path) -> None:
+    from src.quick_search import blueprint_body, search_blueprints, ultimatum_body
+    from src.ui.quick_tab import QuickSearchTab
+
+    u = ultimatum_body("DoubleCurrency", "Divine Orb", 150)
+    assert u["query"]["filters"]["ultimatum_filters"]["filters"] == {
+        "ultimatum_reward": {"option": "DoubleCurrency"}, "ultimatum_input": {"option": "Divine Orb"}}
+    assert u["query"]["filters"]["trade_filters"]["filters"]["price"] == {"max": 150}
+    ex = ultimatum_body("ExchangeUnique", "Defiance of Destiny")
+    assert ex["query"]["filters"]["ultimatum_filters"]["filters"]["ultimatum_output"] == {"option": "Defiance of Destiny"}
+    b = blueprint_body("Bunker", 4, 4, 83, 0)
+    assert b["query"]["type"] == "Blueprint: Bunker"
+    assert b["query"]["filters"]["heist_filters"]["filters"] == {"heist_wings": {"min": 4}, "heist_max_wings": {"min": 4, "max": 4}}
+    assert "type" not in blueprint_body("Any blueprint")["query"]
+
+    listing = {"listing": {"price": {"amount": 1, "currency": "divine"}, "account": {"name": "s"}, "indexed": "2026-11-19T10:00:00Z"},
+               "item": {"typeLine": "Blueprint: Bunker of Selfishness", "properties": [
+                   {"name": "Area Level", "values": [["83", 0]]}, {"name": "Wings Revealed", "values": [["4/4", 0]]},
+                   {"name": "Escape Routes Revealed", "values": [["4/8", 0]]}, {"name": "Reward Rooms Revealed", "values": [["12/28", 0]]}]}}
+    rows, url, total = search_blueprints("Covens", "Bunker", 4, 4, 83, divine_chaos=190.0,
+                                         post=lambda u, body: {"id": "q1", "result": ["a"], "total": 7},
+                                         get=lambda u: {"result": [listing]})
+    assert total == 7 and url.endswith("/Covens/q1") and rows[0].wings == "4/4" and rows[0].price_chaos == 190.0
+
+    tab = QuickSearchTab(lambda r, i, m: ([_deal("a", price=50.0)], "https://x/u", 3),
+                         lambda *a: (rows, "https://x/b", 7), lambda c: f"{c:.0f}c", lambda: ["Divine Orb"])
+    tab.run_ultimatums(sync=True)
+    tab.run_blueprints(sync=True)
+    assert tab.u_table.rowCount() == 1 and tab.b_table.rowCount() == 1 and tab.urls == {"u": "https://x/u", "b": "https://x/b"}
+    assert "3 listed" in tab.u_status.text() and tab.b_table.item(0, 2).text() == "4/4"

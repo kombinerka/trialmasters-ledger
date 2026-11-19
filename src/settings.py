@@ -29,7 +29,7 @@ class AppSettings:
     hard_mods: List[str] = field(default_factory=list)  # ultimatum modifiers you don't want to run ([] = defaults)
     # loot filter
     filter_league: str = ""
-    filter_strictness: str = "show a lot"
+    filter_strictness: str = "Soft"  # NeverSink's levels: Soft … Uber Plus Strict
     filter_tier4: str = "highlight"
     filter_top_chaos: float = 100.0
     filter_high_chaos: float = 20.0

@@ -20,7 +20,7 @@ from PyQt6.QtWidgets import (
     QWidget,
 )
 
-from src.loot_filter import STRICTNESS, TIER4_MODES
+from src.loot_filter import STRICTNESS, TIER4_MODES, strictness_label
 
 
 class LootFilterWindow(QWidget):
@@ -57,11 +57,12 @@ class LootFilterWindow(QWidget):
         self.league_combo.addItem(cfg.filter_league or "(current league)")
         self.league_combo.currentTextChanged.connect(self._league_changed)
         grid.addWidget(self.league_combo, 0, 1)
-        grid.addWidget(QLabel("Show:"), 1, 0)
+        grid.addWidget(QLabel("Strictness (NeverSink):"), 1, 0)
         self.strict_combo = QComboBox()
         for label in STRICTNESS:
             self.strict_combo.addItem(label)
-        self.strict_combo.setCurrentText(cfg.filter_strictness if cfg.filter_strictness in STRICTNESS else "show a lot")
+        self.strict_combo.setCurrentText(strictness_label(cfg.filter_strictness))
+        self.strict_combo.setToolTip("NeverSink's strictness levels: Soft shows the most, Uber Plus Strict only the very best")
         self.strict_combo.currentTextChanged.connect(lambda t: self._set("filter_strictness", t))
         grid.addWidget(self.strict_combo, 1, 1)
         grid.addWidget(QLabel("Tier 4 gear (new item tiers):"), 5, 0)
