@@ -47,6 +47,10 @@ ultimatum sells for and how often you'd have to win.
 
 ![Quick search](docs/quick-search.png)
 
+### 🧹 Loot filter
+
+![Loot filter](docs/loot-filter.png)
+
 ### ⚠ Your own hard modifiers
 
 Not everyone hates the same modifiers. Tick the ones you won't run – the scanner marks them, can hide those deals and
