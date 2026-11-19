@@ -42,6 +42,13 @@ ultimatum sells for and how often you'd have to win.
 
 ![Ultimatum price check](docs/ultimatum-check.png)
 
+### ⚠ Your own hard modifiers
+
+Not everyone hates the same modifiers. Tick the ones you won't run – the scanner marks them, can hide those deals and
+leaves them out of the trade search it opens for you.
+
+![Ultimatum modifier settings](docs/settings-mods.png)
+
 Smart bits:
 
 * **Hard modifiers are yours to pick** (Ruin, Drought, Escalating … or none) – marked ⚠, optionally hidden.

@@ -11,6 +11,7 @@ from PyQt6.QtWidgets import (
     QHBoxLayout,
     QLabel,
     QLineEdit,
+    QListView,
     QListWidget,
     QListWidgetItem,
     QPushButton,
@@ -79,7 +80,13 @@ class SettingsTab(QWidget):
         title.setTextFormat(Qt.TextFormat.RichText)
         hard_box.addWidget(title)
         self.hard_list = QListWidget()
-        self.hard_list.setMaximumHeight(230)
+        # all ~60 modifiers in columns (top to bottom, then the next column) instead of one long scrolling list
+        self.hard_list.setFlow(QListView.Flow.TopToBottom)
+        self.hard_list.setWrapping(True)
+        self.hard_list.setResizeMode(QListView.ResizeMode.Adjust)
+        self.hard_list.setSpacing(2)
+        self.hard_list.setMinimumHeight(300)
+        self.hard_list.setMaximumHeight(420)
         self.hard_list.setStyleSheet(
             "QListWidget::indicator { width: 14px; height: 14px; border: 1px solid #6b7280; border-radius: 3px; "
             "background: #111827; } QListWidget::indicator:checked { background: #b91c1c; border-color: #f87171; }")
