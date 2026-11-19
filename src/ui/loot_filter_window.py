@@ -15,6 +15,7 @@ from PyQt6.QtWidgets import (
     QLabel,
     QLineEdit,
     QPushButton,
+    QSpinBox,
     QVBoxLayout,
     QWidget,
 )
@@ -84,7 +85,69 @@ class LootFilterWindow(QWidget):
             spin.valueChanged.connect(lambda v, f=field_name: self._set(f, float(v)))
             self.spins[field_name] = spin
             grid.addWidget(spin, row, 1)
-        lay.addLayout(grid)
+        for w in (self.league_combo, self.strict_combo, self.tier4_combo, *self.spins.values()):
+            w.setMinimumWidth(260)
+            w.setMaximumWidth(380)
+
+        # ---- look & extra highlights (right column)
+        opts = QVBoxLayout()
+        opts.setSpacing(6)
+        head = QLabel("<b>Look</b>")
+        head.setTextFormat(Qt.TextFormat.RichText)
+        opts.addWidget(head)
+        self.checks = {}
+        for field_name, label, tip in (
+                ("filter_sounds", "🔊 Drop sounds", "The app's own rules play a sound for valuable drops"),
+                ("filter_beams", "🔦 Light beams", "Coloured beams on valuable drops"),
+                ("filter_minimap", "🗺 Minimap icons", "Icons on the minimap for valuable drops")):
+            box = QCheckBox(label)
+            box.setToolTip(tip)
+            box.setChecked(bool(getattr(cfg, field_name, True)))
+            box.toggled.connect(lambda v, f=field_name: self._set(f, bool(v)))
+            self.checks[field_name] = box
+            opts.addWidget(box)
+        boost_row = QHBoxLayout()
+        boost_row.addWidget(QLabel("Bigger text on highlighted drops:"))
+        self.boost_spin = QSpinBox()
+        self.boost_spin.setRange(0, 10)
+        self.boost_spin.setPrefix("+")
+        self.boost_spin.setValue(int(getattr(cfg, "filter_font_boost", 0)))
+        self.boost_spin.valueChanged.connect(lambda v: self._set("filter_font_boost", int(v)))
+        boost_row.addWidget(self.boost_spin)
+        boost_row.addStretch(1)
+        opts.addLayout(boost_row)
+        head2 = QLabel("<b>Always highlight</b>")
+        head2.setTextFormat(Qt.TextFormat.RichText)
+        opts.addWidget(head2)
+        for field_name, label in (("filter_chaos", "🟡 Chaos Orbs – big and gold"),
+                                  ("filter_heist", "🟣 Heist Blueprints and Contracts"),
+                                  ("filter_ultimatum", "🔴 Inscribed Ultimatums")):
+            box = QCheckBox(label)
+            box.setChecked(bool(getattr(cfg, field_name, True)))
+            box.toggled.connect(lambda v, f=field_name: self._set(f, bool(v)))
+            self.checks[field_name] = box
+            opts.addWidget(box)
+        self.texts = {}
+        for field_name, label, hint in (
+                ("filter_always_show", "Always show big (cyan):", "e.g. Orb of Alchemy, Vaal Orb, Stacked Deck"),
+                ("filter_always_hide", "Never show:", "e.g. Scroll of Wisdom, Portal Scroll")):
+            opts.addWidget(QLabel(label))
+            edit = QLineEdit(str(getattr(cfg, field_name, "") or ""))
+            edit.setPlaceholderText(hint + " – exact item names, comma separated")
+            edit.setMinimumWidth(420)
+            edit.editingFinished.connect(lambda f=field_name, e=edit: self._set(f, e.text().strip()))
+            self.texts[field_name] = edit
+            opts.addWidget(edit)
+        note = QLabel("Names the game doesn't know are skipped, so a typo never breaks the filter.")
+        note.setStyleSheet("color: #9ca3af; font-size: 11px;")
+        opts.addWidget(note)
+        opts.addStretch(1)
+        columns = QHBoxLayout()
+        columns.addLayout(grid)
+        columns.addSpacing(40)
+        columns.addLayout(opts)
+        columns.addStretch(1)
+        lay.addLayout(columns)
 
         self.auto_check = QCheckBox("Keep it up to date (new prices every hour while the app runs)")
         self.auto_check.setChecked(cfg.filter_auto)

@@ -377,8 +377,12 @@ class MainWindow(QMainWindow):
         if self._filter_busy:
             return False
         cfg = self.settings_mgr.settings
+        names = lambda text: tuple(n.strip() for n in str(text or "").replace("\n", ",").split(",") if n.strip())  # noqa: E731
         fcfg = FilterSettings(cfg.filter_strictness, cfg.filter_tier4, cfg.filter_top_chaos, cfg.filter_high_chaos,
-                              cfg.filter_mid_chaos, cfg.filter_high_chaos)
+                              cfg.filter_mid_chaos, cfg.filter_high_chaos, sounds=cfg.filter_sounds,
+                              beams=cfg.filter_beams, minimap=cfg.filter_minimap, font_boost=int(cfg.filter_font_boost),
+                              chaos=cfg.filter_chaos, heist=cfg.filter_heist, ultimatum=cfg.filter_ultimatum,
+                              always_show=names(cfg.filter_always_show), always_hide=names(cfg.filter_always_hide))
         self._filter_busy = True
         self.filter_tab.set_status("⏳ Downloading the base filter / prices and writing…")
 

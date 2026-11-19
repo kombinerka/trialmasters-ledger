@@ -18,7 +18,7 @@ import re
 import time
 import urllib.parse
 import urllib.request
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from pathlib import Path
 from typing import Callable, Dict, List, Optional, Sequence, Tuple
 
@@ -229,6 +229,12 @@ STYLES = {
     # Chaos Orbs: the everyday currency – big, gold and with a sound, so a single one never gets missed on the ground
     "chaos": ["SetFontSize 45", "SetTextColor 255 215 0 255", "SetBorderColor 255 215 0 255",
               "SetBackgroundColor 70 45 0 245", "PlayAlertSound 2 250", "PlayEffect Yellow", "MinimapIcon 1 Yellow Circle"],
+    "heist": ["SetFontSize 42", "SetTextColor 255 255 255 255", "SetBorderColor 192 132 252 255",
+              "SetBackgroundColor 59 7 100 240", "PlayAlertSound 3 300", "PlayEffect Purple", "MinimapIcon 1 Purple Diamond"],
+    "ultimatum": ["SetFontSize 42", "SetTextColor 255 255 255 255", "SetBorderColor 248 113 113 255",
+                  "SetBackgroundColor 110 20 20 240", "PlayAlertSound 3 300", "PlayEffect Red", "MinimapIcon 1 Red Hexagon"],
+    "custom": ["SetFontSize 44", "SetTextColor 0 0 0 255", "SetBorderColor 0 0 0 255", "SetBackgroundColor 34 211 238 255",
+               "PlayAlertSound 2 300", "PlayEffect Cyan", "MinimapIcon 1 Cyan Star"],
     "boots": ["SetFontSize 42", "SetTextColor 255 255 255 255", "SetBorderColor 147 197 253 255",
               "SetBackgroundColor 30 58 138 240", "PlayAlertSound 3 300", "PlayEffect Blue", "MinimapIcon 1 Blue Triangle"],
 }
@@ -276,45 +282,79 @@ class FilterSettings:
     high_chaos: float = 20.0
     mid_chaos: float = 5.0
     unique_high_chaos: float = 20.0
+    # look & extras (Loot filter tab)
+    sounds: bool = True  # PlayAlertSound on the app's own rules
+    beams: bool = True  # PlayEffect (light beams)
+    minimap: bool = True  # MinimapIcon
+    font_boost: int = 0  # added to the app's font sizes (max 45)
+    chaos: bool = True  # Chaos Orbs big and gold
+    heist: bool = True  # Blueprints and Contracts
+    ultimatum: bool = True  # Inscribed Ultimatums
+    always_show: Tuple[str, ...] = ()  # base types you always want big (exact names)
+    always_hide: Tuple[str, ...] = ()  # base types you never want to see
+
+
+def _style(cfg: FilterSettings, name: str) -> List[str]:
+    """One of STYLES, minus sounds / beams / minimap icons if you switched them off, with your font boost."""
+    out = []
+    for line in STYLES[name]:
+        if (line.startswith("PlayAlertSound") and not cfg.sounds) or (line.startswith("PlayEffect") and not cfg.beams) \
+                or (line.startswith("MinimapIcon") and not cfg.minimap):
+            continue
+        if line.startswith("SetFontSize") and cfg.font_boost:
+            line = f"SetFontSize {min(45, int(line.split()[1]) + int(cfg.font_boost))}"
+        out.append(line)
+    return out
 
 
 def companion_rules(cfg: FilterSettings, prices: Optional[Prices], socket_groups: Sequence[Tuple[str, bool]],
                     gear: Optional[GearProfile] = None) -> str:
     out = []
+    S = lambda name: _style(cfg, name)  # noqa: E731
+    if cfg.always_hide:  # you never want to see these
+        out.append("Hide # Trialmaster's Ledger: your always-hide list\n\tBaseType == "
+                   + _quote_list(cfg.always_hide) + "\n")
+    if cfg.always_show:
+        out.append(_block([f"BaseType == {_quote_list(cfg.always_show)}"], S("custom"), "your always-show list"))
     # ---- leveling: gear for your build (before the link rules: an item with good mods AND links stays big)
     if gear and gear.good_mods:
         classes = list(gear.weapon_classes) + list(GEAR_CLASSES)
         out.append(_block(["AreaLevel <= 67", "Rarity Magic Rare", f"Class == {_quote_list(classes)}",
                            f"HasExplicitMod >= 2 {_quote_list(gear.good_mods)}"],
-                          STYLES["gear_top"], f"build gear with 2+ good mods ({gear.label})"))
+                          S("gear_top"), f"build gear with 2+ good mods ({gear.label})"))
     if gear and gear.weapon_classes:
         out.append(_block(["AreaLevel <= 67", "Rarity Magic Rare", f"Class == {_quote_list(gear.weapon_classes)}"],
-                          STYLES["gear_weapon"], f"your weapon types: {', '.join(gear.weapon_classes)}"))
+                          S("gear_weapon"), f"your weapon types: {', '.join(gear.weapon_classes)}"))
     # ---- leveling: your build's links (zones below maps)
     for colours, is_main in socket_groups:
         out.append(_block(["AreaLevel <= 67", "Rarity Normal Magic Rare", f'SocketGroup "{colours}"'],
-                          STYLES["main_links" if is_main else "other_links"],
+                          S("main_links" if is_main else "other_links"),
                           f"{'main skill' if is_main else 'build'} links {colours}"))
-    out.append(_block(["AreaLevel <= 67", "Rarity Normal Magic Rare", "LinkedSockets >= 4"], STYLES["four_link"], "any 4-link while leveling"))
+    out.append(_block(["AreaLevel <= 67", "Rarity Normal Magic Rare", "LinkedSockets >= 4"], S("four_link"), "any 4-link while leveling"))
     out.append(_block(["AreaLevel <= 67", "Rarity Magic Rare", 'Class == "Boots"', f"HasExplicitMod {_quote_list(MOVE_SPEED_PREFIXES)}"],
-                      STYLES["boots"], "movement speed boots while leveling"))
+                      S("boots"), "movement speed boots while leveling"))
     # ---- Chaos Orbs (everywhere): always clearly visible
-    out.append(_block(['Class == "Stackable Currency"', 'BaseType == "Chaos Orb"'], STYLES["chaos"], "Chaos Orb"))
+    if cfg.chaos:
+        out.append(_block(['Class == "Stackable Currency"', 'BaseType == "Chaos Orb"'], S("chaos"), "Chaos Orb"))
+    if cfg.heist:
+        out.append(_block(['Class == "Blueprints" "Contracts"'], S("heist"), "Heist blueprints and contracts"))
+    if cfg.ultimatum:
+        out.append(_block(['BaseType == "Inscribed Ultimatum"'], S("ultimatum"), "Inscribed Ultimatum"))
     # ---- prices (everywhere)
     if prices:
         for tier, low, high in (("top", cfg.top_chaos, None), ("high", cfg.high_chaos, cfg.top_chaos), ("mid", cfg.mid_chaos, cfg.high_chaos)):
             names = [n for n, v in prices.items.items() if v >= low and (high is None or v < high)]
             if names:
-                out.append(_block([f"BaseType == {_quote_list(names)}"], STYLES[tier], f"{tier} value ({low:g}c+) by poe.ninja"))
+                out.append(_block([f"BaseType == {_quote_list(names)}"], S(tier), f"{tier} value ({low:g}c+) by poe.ninja"))
         # A filter only sees the base type: "top" when every unique on that base is expensive,
         # "worth a look" when at least one of them is (e.g. Heavy Belt: Mageblood among cheap belts)
         top = [b for b, (lo, hi) in prices.unique_bases.items() if lo >= cfg.top_chaos]
         if top:
-            out.append(_block(["Rarity Unique", f"BaseType == {_quote_list(top)}"], STYLES["top"],
+            out.append(_block(["Rarity Unique", f"BaseType == {_quote_list(top)}"], S("top"),
                               f"unique base, every unique on it is worth {cfg.top_chaos:g}c+"))
         maybe = [b for b, (lo, hi) in prices.unique_bases.items() if hi >= cfg.unique_high_chaos and b not in top]
         if maybe:
-            out.append(_block(["Rarity Unique", f"BaseType == {_quote_list(maybe)}"], STYLES["high"],
+            out.append(_block(["Rarity Unique", f"BaseType == {_quote_list(maybe)}"], S("high"),
                               f"unique base, one of its uniques is worth {cfg.unique_high_chaos:g}c+ (check it)"))
     return "\n".join(out)
 
@@ -333,9 +373,12 @@ def build_filter(base_filter: str, cfg: FilterSettings, prices: Optional[Prices]
         "#" + "=" * 100,
         "",
     ]
+    # PoE rejects a filter with an unknown BaseType: only keep names NeverSink's filter itself uses
+    known = set(re.findall(r'"([^"\n]+)"', base_filter))
+    if cfg.always_show or cfg.always_hide:
+        cfg = replace(cfg, always_show=tuple(n for n in cfg.always_show if n in known),
+                      always_hide=tuple(n for n in cfg.always_hide if n in known))
     if prices:
-        # PoE rejects a filter with an unknown BaseType: only keep names NeverSink's filter itself uses
-        known = set(re.findall(r'"([^"\n]+)"', base_filter))
         prices = Prices(prices.league, prices.fetched_at,
                         {n: v for n, v in prices.items.items() if n in known},
                         {b: v for b, v in prices.unique_bases.items() if b in known})

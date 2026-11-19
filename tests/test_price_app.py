@@ -279,3 +279,20 @@ def test_chaos_orbs_are_big_and_gold_in_the_filter() -> None:
     rules = companion_rules(FilterSettings(), None, [])
     block = rules.split('BaseType == "Chaos Orb"')[0].rsplit("Show", 1)[1] + rules.split('BaseType == "Chaos Orb"')[1].split("Show")[0]
     assert 'Class == "Stackable Currency"' in block and "SetFontSize 45" in block and "MinimapIcon" in block
+
+
+def test_loot_filter_options() -> None:
+    from src.loot_filter import FilterSettings, build_filter
+
+    base = 'Show\n\tBaseType == "Chaos Orb" "Scroll of Wisdom" "Orb of Alchemy" "Inscribed Ultimatum"\n'
+    quiet = FilterSettings(sounds=False, beams=False, minimap=False, font_boost=3, heist=False,
+                           always_show=("Orb of Alchemy", "Not An Item"), always_hide=("Scroll of Wisdom",))
+    text = build_filter(base, quiet, None, [])
+    mine = text.split("\n\n" + base)[0]
+    assert "PlayAlertSound" not in mine and "PlayEffect" not in mine and "MinimapIcon" not in mine
+    assert 'Hide # Trialmaster\'s Ledger: your always-hide list\n\tBaseType == "Scroll of Wisdom"' in mine
+    assert '"Orb of Alchemy"' in mine and "Not An Item" not in mine  # unknown names never break the filter
+    assert "Blueprints" not in mine and '"Inscribed Ultimatum"' in mine
+    assert "SetFontSize 45" in mine and "SetFontSize 48" not in mine  # boosted, capped at 45
+    loud = build_filter(base, FilterSettings(), None, [])
+    assert 'Class == "Blueprints" "Contracts"' in loud and "PlayEffect Purple" in loud

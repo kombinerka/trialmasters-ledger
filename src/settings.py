@@ -37,6 +37,15 @@ class AppSettings:
     filter_auto: bool = True
     filter_dir: str = ""
     filter_written: bool = False
+    filter_sounds: bool = True
+    filter_beams: bool = True
+    filter_minimap: bool = True
+    filter_font_boost: int = 0
+    filter_chaos: bool = True
+    filter_heist: bool = True
+    filter_ultimatum: bool = True
+    filter_always_show: str = ""  # comma separated base types
+    filter_always_hide: str = ""
     # window
     window_x: int = -1
     window_y: int = -1
