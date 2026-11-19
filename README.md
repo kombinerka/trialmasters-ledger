@@ -1,5 +1,7 @@
 # Trialmaster's Ledger
 
+[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-PayPal-0070ba?logo=paypal&logoColor=white)](https://www.paypal.com/donate/?hosted_button_id=WSZ45QZFULXAL)
+
 **Inscribed Ultimatum scanner, Heist curio price check and deal tracking for Path of Exile 1.**
 A small Windows desktop app (Python + Qt) that tells you which Inscribed Ultimatums are worth buying, how often you'd have
 to win them to come out ahead, what that **Heist curio** on the display is worth – and keeps score of how you actually do.
@@ -117,6 +119,11 @@ base filter: [NeverSink](https://github.com/NeverSinkDev/NeverSink-Filter) (MIT)
 OCR: [RapidOCR](https://github.com/RapidAI/RapidOCR).
 
 This product isn't affiliated with or endorsed by Grinding Gear Games in any way.
+
+## ☕ Support
+
+The app is free and stays free. If it made you some currency and you'd like to say thanks:
+[buy me a coffee via PayPal](https://www.paypal.com/donate/?hosted_button_id=WSZ45QZFULXAL) – entirely optional, and appreciated.
 
 ## License
 
