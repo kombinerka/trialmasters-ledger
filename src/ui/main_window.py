@@ -166,17 +166,24 @@ class MainWindow(QMainWindow):
         d.reward_chaos = real * d.count * 2
 
     # ---------- quick search (one-off, you press the button) ----------
-    def quick_ultimatums(self, reward_type: str, item: str, max_chaos: float):
+    def quick_ultimatums(self, reward_type: str, item: str, max_chaos: float, only_clean: bool = False):
+        not_ids: list = []
+        if only_clean:  # your hard-modifier list (⚙ Settings) as the site's NOT group
+            mods = self.service.trade_data().ultimatum_mods
+            not_ids = [i for name in NASTY_MODS for i in mods.get(squash(name), [])]
         deals, url, total = search_ultimatums(self._scan_index(), self.service.current_league(), reward_type, item,
-                                              max_chaos, post=self._post, get=self._get)
+                                              max_chaos, post=self._post, get=self._get, not_ids=not_ids,
+                                              only_clean=only_clean)
         for d in deals:
             self.reality_check(d)
         return deals, url, total
 
-    def quick_blueprints(self, blueprint: str, wings: int, total_wings: int, min_area: int, max_chaos: float):
+    def quick_blueprints(self, blueprint: str, wings: int, total_wings: int, min_area: int, max_chaos: float,
+                         target: str = ""):
         idx = self.price_check.cached()
         return search_blueprints(self.service.current_league(), blueprint, wings, total_wings, min_area, max_chaos,
-                                 divine_chaos=getattr(idx, "divine_chaos", 0.0) or 0.0, post=self._post, get=self._get)
+                                 divine_chaos=getattr(idx, "divine_chaos", 0.0) or 0.0, post=self._post, get=self._get,
+                                 target=target)
 
     def _quick_item_names(self) -> list:
         """Sacrifices and unique rewards seen on the market so far, plus the usual currency."""

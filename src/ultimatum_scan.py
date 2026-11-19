@@ -14,7 +14,6 @@ Qt-free so it can be unit-tested.
 from __future__ import annotations
 
 import json
-import re
 import threading
 import time
 import urllib.parse
@@ -120,7 +119,8 @@ def market_warning(entry, amount: int = 1) -> str:
             notes.append(f"~{per_day:.0f} sold/day" if per_day >= 1 else "<1 sold/day")
     elif entry.kind == "unique" and 0 < getattr(entry, "listings", 0) < UNRELIABLE_LISTINGS:
         notes.append(f"price unknown – poe.ninja's {entry.chaos:,.0f}c rests on only {entry.listings} listings")
-    if getattr(entry, "change", 0) > PUMP_CHANGE:
+    liquid = volume >= 0 and entry.chaos > 0 and volume / entry.chaos >= 200  # Divine, Exalted …: no pump possible
+    if getattr(entry, "change", 0) > PUMP_CHANGE and not liquid:
         notes.append(f"+{entry.change:,.0f}% this week")
     return ", ".join(notes)
 

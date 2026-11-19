@@ -330,9 +330,36 @@ def test_quick_searches_build_the_right_queries(qapp: QApplication, tmp_path: Pa
                                          get=lambda u: {"result": [listing]})
     assert total == 7 and url.endswith("/Covens/q1") and rows[0].wings == "4/4" and rows[0].price_chaos == 190.0
 
-    tab = QuickSearchTab(lambda r, i, m: ([_deal("a", price=50.0)], "https://x/u", 3),
+    tab = QuickSearchTab(lambda r, i, m, clean: ([_deal("a", price=50.0)], "https://x/u", 3),
                          lambda *a: (rows, "https://x/b", 7), lambda c: f"{c:.0f}c", lambda: ["Divine Orb"])
     tab.run_ultimatums(sync=True)
     tab.run_blueprints(sync=True)
     assert tab.u_table.rowCount() == 1 and tab.b_table.rowCount() == 1 and tab.urls == {"u": "https://x/u", "b": "https://x/b"}
-    assert "3 listed" in tab.u_status.text() and tab.b_table.item(0, 2).text() == "4/4"
+    assert "3 listed" in tab.u_status.text() and tab.b_table.item(0, 3).text() == "4/4" and tab.b_table.item(0, 2).text() == "–"
+
+
+def test_quick_search_hard_mods_and_blueprint_targets() -> None:
+    from src.quick_search import BLUEPRINT_TARGETS, blueprint_body, search_ultimatums, ultimatum_body
+    from src.trade_search import TradeQueryError
+    from src.ultimatum_scan import market_warning
+
+    assert ultimatum_body("DoubleCurrency", "Divine Orb", 150, not_ids=["u1", "u2"])["query"]["stats"] == [
+        {"type": "not", "filters": [{"id": "u1"}, {"id": "u2"}]}]
+    replica = blueprint_body("Any blueprint", 4, 4, 83, target=BLUEPRINT_TARGETS["Replica Unique Items"])["query"]
+    assert replica["stats"] == [{"type": "and", "filters": [{"id": "enchant.stat_2619914138"}]}]
+    none = blueprint_body(target="none")["query"]["stats"][0]
+    assert none["type"] == "not" and len(none["filters"]) == 5
+
+    calls = []
+
+    def post(url, body):  # the site rejects the NOT group: searched again without it, filtered here instead
+        calls.append(body)
+        if "stats" in body["query"]:
+            raise TradeQueryError("too complex")
+        return {"id": "q", "result": [], "total": 0}
+
+    search_ultimatums(_index(), "Covens", "DoubleCurrency", "Divine Orb", 150, post=post, get=lambda u: {"result": []},
+                      not_ids=["u1"], only_clean=True)
+    assert len(calls) == 2 and "stats" not in calls[1]["query"]
+    divine = PriceEntry("Divine Orb", "currency", "", 190.0, volume=190.0 * 5000, change=623)
+    assert market_warning(divine, 2) == ""  # Divine's own price swing is no pump

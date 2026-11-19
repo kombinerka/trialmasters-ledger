@@ -9,6 +9,7 @@ from PyQt6.QtCore import QObject, Qt, QUrl, pyqtSignal
 from PyQt6.QtGui import QBrush, QColor, QDesktopServices
 from PyQt6.QtWidgets import (
     QAbstractItemView,
+    QCheckBox,
     QComboBox,
     QCompleter,
     QDoubleSpinBox,
@@ -24,12 +25,12 @@ from PyQt6.QtWidgets import (
     QWidget,
 )
 
-from src.quick_search import BLUEPRINTS, ULTIMATUM_REWARDS
+from src.quick_search import BLUEPRINT_TARGETS, BLUEPRINTS, ULTIMATUM_REWARDS
 from src.trade_search import TradeBusy, TradeQueryError
 from src.ui.ultimatum_scan_window import _NumItem
 
 U_COLUMNS = ["Profit if you win", "Loss if you fail", "You must win", "Price", "Sacrifice", "Reward", "Challenge", "Lvl", "Seller"]
-B_COLUMNS = ["Price", "Blueprint", "Wings", "Escape routes", "Reward rooms", "Area lvl", "Seller", "Listed"]
+B_COLUMNS = ["Price", "Blueprint", "Heist targets", "Wings", "Escape routes", "Reward rooms", "Area lvl", "Seller", "Listed"]
 
 
 class _Bridge(QObject):
@@ -99,6 +100,10 @@ class QuickSearchTab(QWidget):
         self.u_max.setSpecialValueText("any price")
         self.u_max.setValue(150)
         row.addWidget(self.u_max)
+        self.u_clean = QCheckBox("Only without my hard modifiers")
+        self.u_clean.setToolTip("Your list from ⚙ Settings (Ruin, Drought, …) – those ultimatums are left out of the search")
+        self.u_clean.setChecked(True)
+        row.addWidget(self.u_clean)
         self.u_button = QPushButton("🔎 Search")
         self.u_button.clicked.connect(self.run_ultimatums)
         row.addWidget(self.u_button)
@@ -122,6 +127,14 @@ class QuickSearchTab(QWidget):
         self.b_type = QComboBox()
         self.b_type.addItems(list(BLUEPRINTS))
         row.addWidget(self.b_type)
+        row.addWidget(QLabel("Heist targets:"))
+        self.b_target = QComboBox()
+        self.b_target.addItem("any", "")
+        self.b_target.addItem("no target enchant", "none")
+        for label, stat in BLUEPRINT_TARGETS.items():
+            self.b_target.addItem(f"always {label}", stat)
+        self.b_target.setToolTip("The blueprint's enchant: “Heist Targets are always …”")
+        row.addWidget(self.b_target)
         row.addWidget(QLabel("Wings revealed:"))
         self.b_wings = QSpinBox()
         self.b_wings.setRange(0, 4)
@@ -192,12 +205,13 @@ class QuickSearchTab(QWidget):
 
     def run_ultimatums(self, sync: bool = False) -> None:
         reward, item, max_c = self.u_reward.currentData(), self.u_item.currentText().strip(), float(self.u_max.value())
-        self._run("u", lambda: self._search_u(reward, item, max_c), sync)
+        clean = self.u_clean.isChecked()
+        self._run("u", lambda: self._search_u(reward, item, max_c, clean), sync)
 
     def run_blueprints(self, sync: bool = False) -> None:
         bp, wings, total = self.b_type.currentText(), int(self.b_wings.value()), int(self.b_total.value())
-        area, max_c = int(self.b_area.value()), float(self.b_max.value())
-        self._run("b", lambda: self._search_b(bp, wings, total, area, max_c), sync)
+        area, max_c, target = int(self.b_area.value()), float(self.b_max.value()), self.b_target.currentData()
+        self._run("b", lambda: self._search_b(bp, wings, total, area, max_c, target), sync)
 
     def _done(self, which: str, payload) -> None:
         button, status = (self.u_button, self.u_status) if which == "u" else (self.b_button, self.b_status)
@@ -241,7 +255,9 @@ class QuickSearchTab(QWidget):
             cells = [
                 _NumItem(b.price_text + (f"  ({self.fmt(b.price_chaos)})" if b.price_chaos and "chaos" not in b.price_text else ""),
                          b.price_chaos or 0.0),
-                QTableWidgetItem(b.name), QTableWidgetItem(b.wings), QTableWidgetItem(b.escape_routes),
+                QTableWidgetItem(b.name),
+                QTableWidgetItem(b.targets.replace("Heist Targets are always ", "") if b.targets else "–"),
+                QTableWidgetItem(b.wings), QTableWidgetItem(b.escape_routes),
                 QTableWidgetItem(b.reward_rooms), _NumItem(str(b.area_level), b.area_level),
                 QTableWidgetItem(b.seller), QTableWidgetItem(b.indexed),
             ]
