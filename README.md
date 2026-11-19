@@ -19,9 +19,28 @@ to win them to come out ahead, what that **Heist curio** on the display is worth
 ### 🗝 Heist curios
 
 Curios on a Heist reward display are only a picture – you can't Ctrl+C them, so most price checkers can't read them.
-Hover the curio and press **Ctrl+F3**: the app reads the name straight off the screen (offline OCR on your PC) and shows
-the poe.ninja price next to it – trinkets, uniques, replicas, enchanted bases, gems or currency in the curio display.
-A rare trinket without a fixed name is priced by its affixes on the trade site instead.
+Hover the curio and press **Ctrl+F3**: the app reads the tooltip straight off the screen (offline OCR on your PC) and
+shows the poe.ninja price next to it – replica uniques, uniques, gems, currency, and the Heist-only bases (Eventuality Rod,
+Impact Force Propagator, Accumulator Wand …) by item level. Every check stays in the list, so after a blueprint you can see
+at a glance which curio was worth taking.
+
+![Heist curio price check](docs/heist-curio-2.png)
+
+| | |
+|---|---|
+| ![Replica unique curio](docs/heist-replica.png) | ![Experimented base curio](docs/heist-curio.png) |
+
+![Price check history](docs/heist-history.png)
+
+> Rare curios are priced as their **base type** – what the base is worth for crafting at each item level. A rare with
+> great affixes can be worth more; use the trade site for those.
+
+### 📜 Ctrl+F3 inside the Ultimatum
+
+Hover the Inscribed Ultimatum (also mid-trial) and press Ctrl+F3: sacrifice → reward with their values, what the same
+ultimatum sells for and how often you'd have to win.
+
+![Ultimatum price check](docs/ultimatum-check.png)
 
 Smart bits:
 
