@@ -1,8 +1,8 @@
 # Trialmaster's Ledger
 
-**Inscribed Ultimatum scanner, Heist curio / item price check and deal tracking for Path of Exile 1.**
+**Inscribed Ultimatum scanner, Heist curio price check and deal tracking for Path of Exile 1.**
 A small Windows desktop app (Python + Qt) that tells you which Inscribed Ultimatums are worth buying, how often you'd have
-to win them to come out ahead, and keeps score of how you actually do.
+to win them to come out ahead, what that **Heist curio** on the display is worth – and keeps score of how you actually do.
 
 ![Ultimatum scanner](docs/scanner.png)
 
@@ -15,6 +15,13 @@ to win them to come out ahead, and keeps score of how you actually do.
 | 💰 **Price check (Ctrl+F3)** | Hover an item in game and press **Ctrl+F3**: Inscribed Ultimatums (precise trade search + what you'd make buying at the median), **Heist curios** and other picture-only items (read from the screen), uniques, gems, currency, cards, bases (poe.ninja) and rares (trade site, by their affixes). |
 | 🧹 **Loot filter** | Writes `TrialmastersLedger.filter`: NeverSink's filter + poe.ninja price tiers for your league (refreshed hourly), and big gold Chaos Orbs. |
 | ⚙ **Settings** | League, your own list of ultimatum modifiers you don't want to run, optional trade login. |
+
+### 🗝 Heist curios
+
+Curios on a Heist reward display are only a picture – you can't Ctrl+C them, so most price checkers can't read them.
+Hover the curio and press **Ctrl+F3**: the app reads the name straight off the screen (offline OCR on your PC) and shows
+the poe.ninja price next to it – trinkets, uniques, replicas, enchanted bases, gems or currency in the curio display.
+A rare trinket without a fixed name is priced by its affixes on the trade site instead.
 
 Smart bits:
 
